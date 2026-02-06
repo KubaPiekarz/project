@@ -4,7 +4,7 @@
   </div>
 </template>
 <script setup>
-import CommentList from './components/CommentList.vue'
+import CommentList from './components/comments/CommentList.vue'
 </script>
 
 <style scoped></style>
