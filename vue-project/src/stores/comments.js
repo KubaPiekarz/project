@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
+import { commentsApi } from '@/services/commentsApi'
 
 export const useCommentsStore = defineStore('comments', {
   state: () => ({
@@ -12,8 +12,7 @@ export const useCommentsStore = defineStore('comments', {
       this.loading = true
       this.error = null
       try {
-        const res = await axios.get('https://jsonplaceholder.typicode.com/comments')
-        this.comments = res.data
+        this.comments = await commentsApi.fetchComments()
       } catch (e) {
         this.error = 'Błąd podczas pobierania komentarzy'
       } finally {
