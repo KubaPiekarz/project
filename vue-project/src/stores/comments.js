@@ -13,7 +13,6 @@ export const useCommentsStore = defineStore('comments', {
       this.error = null
       try {
         const res = await axios.get('https://jsonplaceholder.typicode.com/comments')
-        console.log(res.data)
         this.comments = res.data
       } catch (e) {
         this.error = 'Błąd podczas pobierania komentarzy'

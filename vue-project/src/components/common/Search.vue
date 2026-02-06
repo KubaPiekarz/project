@@ -9,13 +9,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    searchTerm: {
-      type: String,
-      default: '',
-    },
+<script setup>
+defineProps({
+  searchTerm: {
+    type: String,
+    default: '',
   },
-}
+})
 </script>
